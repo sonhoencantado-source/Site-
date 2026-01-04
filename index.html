@@ -232,9 +232,9 @@ fetch('produtos.json')
       card.className = 'product-card';
       card.innerHTML = `
         <img class="product-thumb" src="${item.imagem || 'placeholder.jpg'}" alt="${item.titulo || 'Produto'}">
-        <h3 class="product-title">${item.titulo || 'Sem título'}</h3>
-        <p class="product-meta">${item.meta || ''}</p>
-        <p class="product-price">${item.preco || 'R$ 0,00'}</p>
+        <h3 class="product-title">${item.nome || 'Sem título'}</h3>
+        <p class="product-meta">${item.genero || ''}</p>
+        <p class="product-price">R$ ${item.preco || '0,00'}</p>
         <button class="btn-buy">Comprar</button>
       `;
       grid.appendChild(card);
