@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.9,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto1.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 2,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.91,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto2.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 3,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.92,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto3.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 4,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.93,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto4.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 5,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.94,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto5.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 6,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.95,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto6.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 7,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.96,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto7.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 8,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.97,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto8.jpeg",
+    "destaque": "sim"
+  },
+  {
+    "id": 9,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.98,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "imagens/foto.jpeg",
+    "destaque": "sim"
+  }
+]

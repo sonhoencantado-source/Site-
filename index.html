@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sonho Encantado — Moda Infantil</title>
+<meta name="description" content="Sonho Encantado — Moda Infantil. Loja online com layout leve e cores pastel." />
+
+<style>
+:root{
+  --areia: #ffe298;
+  --azul:  #faf393;
+  --accent: #b32400;
+  --texto: #3b3b3b;
+  --muted: #6b7280;
+  --card-bg: rgba(255,255,255,0.85);
+  --radius: 12px;
+  --shadow: 0 8px 28px rgba(20,20,30,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--texto);
+  background: linear-gradient(135deg, var(--areia) 0%, var(--azul) 100%);
+  line-height:1.4;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+.site {
+  max-width:1180px;
+  margin:22px auto;
+  padding:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.52));
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow:var(--shadow);
+  backdrop-filter: blur(6px);
+}
+
+header.app-header {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:0 6px;
+}
+
+.hero-logo {
+  width: 100%;
+  height: 380px;
+  background-image: url("imagens/logo.jpeg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  margin-top: -15px;
+  box-shadow: var(--shadow);
+}
+
+/* ================= CARROSSEL ================= */
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.carousel-track {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track .slide {
+  width: 100%;
+  height: 100%;
+  display: none; /* escondido por padrão */
+  text-align: center;
+}
+
+.carousel-track .slide.active {
+  display: block;
+}
+
+.carousel-track .slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-track .slide h3 {
+  margin: 5px 0 0 0;
+}
+
+.carousel-track .slide p {
+  margin: 0;
+}
+
+.carousel-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ================= PRODUTOS ================= */
+.section { margin-top:22px; }
+.section h2{margin:6px 0 12px;font-size:20px}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+}
+@media (max-width:980px){ .products-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){ .products-grid{grid-template-columns:repeat(1,1fr)} }
+
+.product-card{
+  background:var(--card-bg);
+  border-radius:12px;
+  padding:12px;
+  box-shadow:0 8px 28px rgba(10,10,18,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.product-thumb{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.product-title{font-weight:600;font-size:16px;margin:0}
+.product-meta{font-size:13px;color:var(--muted)}
+.product-price{font-weight:800;font-size:18px;color:var(--texto)}
+.btn-buy{
+  margin-top:8px;padding:10px;border-radius:10px;border:none;background:var(--accent);
+  color:white;font-weight:700;cursor:pointer;
+}
+
+footer.site-footer{
+  margin-top:22px;padding:14px;text-align:center;color:var(--muted);
+  font-size:14px;border-radius:8px;
+}
+
+/* ================= LOGO RESPONSIVA ================= */
+@media (max-width:980px){
+  .hero-logo { height: 300px; }
+}
+@media (max-width:640px){
+  .hero-logo { height: 200px; }
+}
+
+/* ================= CARRINHO ================= */
+.cart { position: fixed; top: 80px; right: 20px; width: 280px; max-height: 400px; overflow-y: auto; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); padding: 12px; display: none; flex-direction: column; gap: 10px; z-index: 100; }
+.cart h3 { margin: 0 0 8px 0; font-size: 18px; }
+.cart-item { display:flex; justify-content: space-between; align-items:center; gap:8px; }
+.cart-item span { font-size: 14px; }
+.cart-item button { background:#f44336; border:none; border-radius:6px; color:white; padding:2px 6px; cursor:pointer; }
+.cart-footer { display:flex; justify-content: space-between; margin-top:10px; }
+.cart-footer button { background:var(--accent); border:none; color:white; padding:6px 10px; border-radius:6px; cursor:pointer; }
+.cart-toggle { position: fixed; top: 30px; right: 20px; background: var(--accent); color:white; border:none; border-radius:50%; width:50px; height:50px; cursor:pointer; font-size:20px; z-index:101; }
+
+/* ================= RESPONSIVO ================= */
+@media (max-width:640px){
+  .cart{ width:90%; right:5%; top:60px; max-height:300px; }
+  .cart-toggle{ width:40px; height:40px; font-size:18px; }
+}
+</style>
+</head>
+
+<body>
+<main class="site">
+
+<header class="app-header">
+  <div class="hero-logo"></div>
+</header>
+
+<!-- ================= CARROSSEL ================= -->
+<section class="carousel">
+  <button class="carousel-btn" id="prevBtn">‹</button>
+  <div class="carousel-track" id="carouselTrack">
+    <!-- Slides serão inseridos aqui via JS -->
+  </div>
+  <button class="carousel-btn" id="nextBtn">›</button>
+</section>
+
+<!-- ================= PRODUTOS ================= -->
+<section class="section">
+  <h2>Produtos em destaque</h2>
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- ================= CARRINHO ================= -->
+<button class="cart-toggle" id="cartToggle">🛒</button>
+<div class="cart" id="cart">
+  <h3>Carrinho</h3>
+  <div id="cartItems"></div>
+  <div class="cart-footer">
+    <strong>Total:</strong> <span id="cartTotal">R$ 0,00</span>
+    <button id="checkoutBtn">Finalizar no WhatsApp</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  © Sonho Encantado — Todos os direitos reservados
+</footer>
+
+</main>
+
+<script>
+let slides = [];
+let currentIndex = 0;
+
+fetch('produtos.json')
+  .then(res => res.json())
+  .then(produtos => {
+    const grid = document.getElementById('productsGrid');
+    const track = document.getElementById('carouselTrack');
+
+    produtos.forEach((item, index) => {
+      // ===== Produtos =====
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img class="product-thumb" src="${item.imagem || 'placeholder.jpg'}" alt="${item.titulo || 'Produto'}">
+        <h3 class="product-title">${item.titulo || 'Sem título'}</h3>
+        <p class="product-meta">${item.meta || ''}</p>
+        <p class="product-price">${item.preco || 'R$ 0,00'}</p>
+        <button class="btn-buy">Comprar</button>
+      `;
+      grid.appendChild(card);
+
+      // ===== Carrossel =====
+      const slide = document.createElement('div');
+      slide.classList.add('slide');
+      if(index === 0) slide.classList.add('active');
+      slide.innerHTML = `
+        <img src="${item.imagem || 'placeholder.jpg'}" alt="${item.titulo || 'Produto'}">
+        <h3>${item.titulo || 'Sem título'}</h3>
+        <p>${item.meta || ''}</p>
+      `;
+      track.appendChild(slide);
+      slides.push(slide);
+    });
+  })
+  .catch(err => console.error(err));
+
+function atualizarCarrossel() {
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[currentIndex].classList.add('active');
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  atualizarCarrossel();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  atualizarCarrossel();
+});
+
+// ================= CARRINHO =================
+const cartToggle = document.getElementById('cartToggle');
+const cart = document.getElementById('cart');
+const cartItemsContainer = document.getElementById('cartItems');
+const cartTotalEl = document.getElementById('cartTotal');
+const checkoutBtn = document.getElementById('checkoutBtn');
+
+let cartItems = [];
+
+cartToggle.addEventListener('click', () => {
+  cart.style.display = cart.style.display === 'flex' ? 'none' : 'flex';
+});
+
+document.addEventListener('click', e => {
+  if(e.target.classList.contains('btn-buy')){
+    const card = e.target.closest('.product-card');
+    const title = card.querySelector('.product-title').textContent;
+    const priceText = card.querySelector('.product-price').textContent.replace('R$ ','').replace(',','.');    
+    const price = parseFloat(priceText);
+    
+    cartItems.push({ title, price });
+    atualizarCarrinho();
+  }
+});
+
+function atualizarCarrinho(){
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+  cartItems.forEach((item,index)=>{
+    total += item.price;
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <span>${item.title} - R$ ${item.price.toFixed(2).replace('.',',')}</span>
+      <button data-index="${index}">X</button>
+    `;
+    cartItemsContainer.appendChild(div);
+  });
+
+  cartTotalEl.textContent = `R$ ${total.toFixed(2).replace('.',',')}`;
+
+  document.querySelectorAll('.cart-item button').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const idx = parseInt(e.target.getAttribute('data-index'));
+      cartItems.splice(idx,1);
+      atualizarCarrinho();
+    });
+  });
+}
+
+checkoutBtn.addEventListener('click', ()=>{
+  if(cartItems.length === 0) return alert('O carrinho está vazio!');
+  let message = 'Olá, quero comprar os seguintes produtos:%0A';
+  cartItems.forEach(item=>{
+    message += `- ${item.title} - R$ ${item.price.toFixed(2).replace('.',',')}%0A`;
+  });
+  const phone = '5511975787385'; // coloque seu número aqui
+  window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+});
+</script>
+
+</body>
+</html>

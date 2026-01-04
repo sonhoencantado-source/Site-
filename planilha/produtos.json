@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "nome": "Vestido Floral  Infaltil",
+    "preco": 69.9,
+    "categoria": "vestido",
+    "genero": "feminino",
+    "faixa_etaria": "infantil",
+    "quantidade": 5,
+    "imagem": "foto5.jpeg",
+    "destaque": "sim"
+  }
+]
